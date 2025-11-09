@@ -1,0 +1,19 @@
+# Dosya: requirements.txt
+
+# API Sunucusu (Sizin listenizden - daha performanslı)
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Yapay Zeka ve Görüntü İşleme
+tensorflow 
+tensorflow-hub
+pillow
+numpy
+opencv-python-headless # (Sizin listenizden - sunucu için doğru olan)
+
+# Güvenlik (Sizin listenizden - JWT için)
+pyjwt
+
+# Yardımcı Araçlar (.env dosyasını okumak için)
+python-dotenv
