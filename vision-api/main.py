@@ -14,7 +14,8 @@ import tensorflow_hub as hub
 import os
 
 # -------- CONFIG ----------
-MODEL_HANDLE = "https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2"
+MODEL_HANDLE = "https://tfhub.dev/tensorflow/ssd_mobilenet_v2_fpnlite_320x320/1"
+
 
 MODEL_INPUT_SIZE = 512
 MAX_PARALLEL_INFERENCES = 2
