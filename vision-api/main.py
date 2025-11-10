@@ -11,6 +11,7 @@ import numpy as np
 import cv2
 import tensorflow as tf
 import tensorflow_hub as hub
+import os
 
 # -------- CONFIG ----------
 MODEL_HANDLE = "https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2"
@@ -459,4 +460,5 @@ async def detect_objects(
     return DetectionResponse(detections=detections)
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
+    port = int(os.environ.get("PORT", 8000))  # Render PORT değişkenini alır
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
