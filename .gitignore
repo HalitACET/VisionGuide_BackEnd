@@ -1,0 +1,26 @@
+# Dosya: .gitignore
+
+# 1. Sanal Ortam (Çok büyük ve sisteme özeldir)
+# Asla GitHub'a gönderilmemeli.
+venv/
+*.venv/
+
+# 2. Gizli Anahtarlar (Çok Önemli!)
+# API anahtarlarınızı ve gizli JWT anahtarlarınızı içeren dosya.
+# Bu dosya ASLA herkese açık olmamalıdır.
+.env
+
+# 3. Python Önbellek Dosyaları (Gereksiz)
+# Python'un hızı artırmak için oluşturduğu geçici dosyalardır.
+__pycache__/
+*.pyc
+*.pyo
+
+# 4. macOS Sistem Dosyaları (Gereksiz)
+# Finder'ın oluşturduğu gizli sistem dosyaları.
+.DS_Store
+
+# 5. IDE Ayar Dosyaları (Kişisel)
+# PyCharm veya VS Code'un kişisel proje ayarları
+.idea/
+.vscode/

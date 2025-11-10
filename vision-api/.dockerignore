@@ -1,0 +1,19 @@
+# Dosya: .dockerignore
+
+# Sanal Ortam
+venv/
+
+# Python Önbellek Dosyaları
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS Sistem Dosyaları
+.DS_Store
+
+# Gizli Anahtarlar (Bunlar imajın içine girmemeli)
+.env
+
+# Git dosyaları
+.git/
+.gitignore
