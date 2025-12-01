@@ -1,15 +1,18 @@
 import logging
 from typing import List, Dict, Any, Union
 
+import io
+
 from PIL import Image
 import numpy as np
-from ultralytics import YOLO
-import io
+import torch
 
 try:
     from ultralytics import YOLO
+    from ultralytics.nn.tasks import DetectionModel
 except ImportError:
     YOLO = None
+    DetectionModel = None
 
 logger = logging.getLogger(__name__)
 
@@ -116,6 +119,16 @@ class YoloEngine:
         try:
             if self.model is None:
                 logger.info(f"YOLOv8 modeli yükleniyor: {self.model_path}")
+                # PyTorch 2.6 ile gelen weights_only=True varsayılanı nedeniyle,
+                # Ultralytics DetectionModel sınıfını güvenli allowlist'e ekliyoruz.
+                try:
+                    if DetectionModel is not None and hasattr(torch, "serialization") and hasattr(
+                        torch.serialization, "add_safe_globals"
+                    ):
+                        torch.serialization.add_safe_globals([DetectionModel])
+                except Exception as e:
+                    logger.warning(f"YOLOv8 safe_globals kaydı sırasında hata oluştu: {e}")
+
                 self.model = YOLO(self.model_path)
                 logger.info("YOLOv8 modeli başarıyla yüklendi.")
             return True
