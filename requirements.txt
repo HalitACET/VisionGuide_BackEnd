@@ -5,10 +5,10 @@ python-multipart==0.0.6
 pydantic==2.5.0
 numpy==1.24.3
 ultralytics==8.0.227
+torch==2.5.1
+torchvision==0.20.1
 
-# SAM 3 & PyTorch (şu an mock, istersen yorumda bırakabilirsin)
-# torch==2.1.0
-# torchvision==0.16.0
+# SAM 3 (şu an mock, istersen yorumda bırakabilirsin)
 # opencv-python-headless==4.8.1.78
 # git+https://github.com/facebookresearch/sam3.git
 
