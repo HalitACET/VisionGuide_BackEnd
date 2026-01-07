@@ -1,19 +1,8 @@
-# Dosya: requirements.txt
-
-# API Sunucusu (Sizin listenizden - daha performanslı)
-fastapi
-uvicorn[standard]
-python-multipart
-
-# Yapay Zeka ve Görüntü İşleme
-tensorflow 
-tensorflow-hub
-pillow
-numpy
-opencv-python-headless # (Sizin listenizden - sunucu için doğru olan)
-
-# Güvenlik (Sizin listenizden - JWT için)
-pyjwt
-
-# Yardımcı Araçlar (.env dosyasını okumak için)
-python-dotenv
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+ultralytics>=8.0.0
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+torch>=2.0.0
+python-multipart>=0.0.6
